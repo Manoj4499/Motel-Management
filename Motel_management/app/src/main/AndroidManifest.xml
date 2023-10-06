@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Motel_management"
         tools:targetApi="31">
         <activity
+            android:name=".ConfirmationPage"
+            android:exported="false" />
+        <activity
             android:name=".Billing"
             android:exported="false" />
         <activity
