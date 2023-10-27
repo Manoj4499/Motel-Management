@@ -35,5 +35,16 @@ public class Reservation extends AppCompatActivity {
 
             }
         });
+
+        Button dashboardbtn = findViewById(R.id.dashboardBtn);
+        dashboardbtn.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Reservation.this, SecondActivity.class);
+
+                startActivity(intent);
+            }
+        });
     }
 }
