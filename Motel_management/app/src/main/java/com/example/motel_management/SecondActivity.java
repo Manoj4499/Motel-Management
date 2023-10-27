@@ -17,7 +17,7 @@ public class SecondActivity extends AppCompatActivity {
         makeReservationButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SecondActivity.this,Reservation.class);
+                Intent intent = new Intent(SecondActivity.this,Registration.class);
                 startActivity(intent);
             }
         });
