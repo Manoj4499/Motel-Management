@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="343dc13b-e3dd-4c32-a8fd-da7daa0eb07a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Motel_management/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Motel_management/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Motel_management/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Motel_management/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Motel_management/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Motel_management/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Motel_management/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Motel_management/app/src/main/res/values/strings.xml" afterDir="false" />
-    </list>
+    <list default="true" id="343dc13b-e3dd-4c32-a8fd-da7daa0eb07a" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,15 +21,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "cidr.known.project.marker": "true",
-    "last_opened_file_path": "C:/Users/s559468/OneDrive - nwmissouri.edu/Desktop/Motel-Management/Motel-Management"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/s559468/OneDrive - nwmissouri.edu/Desktop/Motel-Management/Motel-Management&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
