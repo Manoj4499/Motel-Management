@@ -12,16 +12,18 @@
 
     <TextView
         android:id="@+id/user_details"
-        android:layout_width="439dp"
-        android:layout_height="22dp"
+        android:layout_width="425dp"
+        android:layout_height="57dp"
         android:layout_marginEnd="14dp"
         android:layout_marginBottom="16dp"
+        android:textSize="25dp"
+        android:layout_marginStart="200dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.452"
+        app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.364" />
+        app:layout_constraintVertical_bias="0.378" />
 
     <Button
         android:id="@+id/logout"
