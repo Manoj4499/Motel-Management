@@ -7,8 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Billing extends AppCompatActivity {
+import com.google.firebase.auth.FirebaseAuth;
 
+public class Billing extends AppCompatActivity {
+    Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +22,16 @@ public class Billing extends AppCompatActivity {
                 Intent intent = new Intent(Billing.this, ConfirmationPage.class);
 
                 startActivity(intent);
+            }
+        });
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                Intent intent= new Intent(Billing.this,Login.class);
+                startActivity(intent);
+                finish();
+
             }
         });
     }}
