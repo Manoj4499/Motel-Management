@@ -9,8 +9,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Reservation extends AppCompatActivity {
-    Button button;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,16 +23,7 @@ public class Reservation extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(Reservation.this, Login.class);
-                startActivity(intent);
-                finish();
 
-            }
-        });
 
         Button dashboardbtn = findViewById(R.id.dashboardBtn);
         dashboardbtn.setOnClickListener(new View.OnClickListener()
@@ -44,6 +33,18 @@ public class Reservation extends AppCompatActivity {
                 Intent intent = new Intent(Reservation.this, SecondActivity.class);
 
                 startActivity(intent);
+            }
+        });
+
+        Button button = findViewById(R.id.logout);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(Reservation.this, Login.class);
+                startActivity(intent);
+                finish();
+
             }
         });
     }
