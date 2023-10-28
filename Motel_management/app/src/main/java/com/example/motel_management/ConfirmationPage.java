@@ -6,7 +6,10 @@ import android.view.View;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class ConfirmationPage extends AppCompatActivity {
+    Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +22,16 @@ public class ConfirmationPage extends AppCompatActivity {
                 Intent intent = new Intent(ConfirmationPage.this, SecondActivity.class);
 
                 startActivity(intent);
+            }
+        });
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                Intent intent= new Intent(ConfirmationPage.this,Login.class);
+                startActivity(intent);
+                finish();
+
             }
         });
     }}
