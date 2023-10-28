@@ -15,6 +15,7 @@ public class ConfirmationPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirmation_page);
+        button=findViewById(R.id.logout);
         Button loginButton = findViewById(R.id.homeBTN);
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
