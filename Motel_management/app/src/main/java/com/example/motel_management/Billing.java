@@ -15,6 +15,7 @@ public class Billing extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_billing);
+        button=findViewById(R.id.logout);
         Button loginButton = findViewById(R.id.ConfirmBT);
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
