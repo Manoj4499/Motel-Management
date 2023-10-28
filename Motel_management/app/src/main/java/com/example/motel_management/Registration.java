@@ -29,7 +29,6 @@ public class Registration extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-        // Check if the user is already signed in and update the UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null) {
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
@@ -78,13 +77,11 @@ public class Registration extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 progressbar.setVisibility(View.GONE);
                                 if (task.isSuccessful()) {
-                                    // Registration was successful
                                     Toast.makeText(Registration.this, "Account created.", Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                                     startActivity(intent);
                                     finish();
                                 } else {
-                                    // Registration failed
                                     Toast.makeText(Registration.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
                                 }
                             }
