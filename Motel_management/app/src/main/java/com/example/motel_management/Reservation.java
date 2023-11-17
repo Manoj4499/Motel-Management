@@ -52,6 +52,13 @@ public class Reservation extends AppCompatActivity {
 
         reserveButton.setOnClickListener(new View.OnClickListener() {
             @Override
+            public void onClick(View view) {
+                if (TextUtils.isEmpty(String.valueOf(firstNameET.getText()))) {
+                    Toast.makeText(Reservation.this, "Enter first name", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                
+
 
 
                 ReservationModel rm =
