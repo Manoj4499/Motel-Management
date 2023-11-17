@@ -39,5 +39,16 @@ public class ConfirmationPage extends AppCompatActivity {
             }
         });
 
-      
+        dashboard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ConfirmationPage.this, MainActivity.class);
+                startActivity(intent);
+                finishAffinity();
+            }
+        });
+
+        tv.setText(details);
+
+    }
 }
