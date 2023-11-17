@@ -34,7 +34,25 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        auth = FirebaseAuth.getInstance();
+        button = findViewById(R.id.logout);
+        Textview = findViewById(R.id.user_details);
+        make = findViewById(R.id.cvReservation);
+        find = findViewById(R.id.cvFind);
+        user = auth.getCurrentUser();
 
+        FirebaseFirestoreSettings settings = new FirebaseFirestoreSettings.Builder()
+                .setPersistenceEnabled(false)
+                .build();
+        FirebaseApp.initializeApp(this);
+        FirebaseFirestore.getInstance().setFirestoreSettings(settings);
+
+        if (user == null) {
+            Intent intent = new Intent(getApplicationContext(), Login.class);
+            startActivity(intent);
+            finish();
+        } else {
+            Textview.setText(user.getEmail());
         }
         button.setOnClickListener(new View.OnClickListener() {
             @Override
