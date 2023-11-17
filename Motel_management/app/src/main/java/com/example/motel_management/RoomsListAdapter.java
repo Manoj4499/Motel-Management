@@ -73,4 +73,19 @@ public class RoomsListAdapter extends RecyclerView.Adapter<RoomsListAdapter.Room
     }
 
 
+    static class RoomsViewHolder extends RecyclerView.ViewHolder {
+        public TextView tvType, tvDesc, tvPrice, tvOccupied;
+        public ImageView iv;
+        public Button btMakeRes;
+
+        public RoomsViewHolder(View itemView) {
+            super(itemView);
+            tvType = itemView.findViewById(R.id.tvType);
+            tvDesc = itemView.findViewById(R.id.tvDesc);
+            tvPrice = itemView.findViewById(R.id.tvPrice);
+            tvOccupied = itemView.findViewById(R.id.tvOccupied);
+            iv = itemView.findViewById(R.id.iv);
+            btMakeRes = itemView.findViewById(R.id.btMakeReservation);
+        }
+    }
 }
