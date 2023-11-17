@@ -130,5 +130,20 @@ public class Room implements Parcelable {
         return 0;
     }
 
-  
+    @Override
+    public void writeToParcel(@NonNull Parcel parcel, int i) {
+        parcel.writeString(id);
+        parcel.writeString(motelId);
+        parcel.writeString(type);
+        parcel.writeString(description);
+        parcel.writeByte((byte) (occupied == null ? 0 : occupied ? 1 : 2));
+        parcel.writeString(imageUrl);
+        if (price == null) {
+            parcel.writeByte((byte) 0);
+        } else {
+            parcel.writeByte((byte) 1);
+            parcel.writeLong(price);
+        }
+        parcel.writeByte((byte) (checkIn == null ? 0 : checkIn ? 1 : 2));
+    }
 }
