@@ -54,7 +54,15 @@ public class Login extends AppCompatActivity {
         //progressbar = findViewById(R.id.progressbar);
         regnow = findViewById(R.id.registernow);
         regnow.setOnClickListener(new View.OnClickListener() {
-           
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Registration.class);
+                startActivity(intent);
+                finish();
+            }
+
+
+        });
 
         forgotPassword.setOnClickListener(new View.OnClickListener() {
             @Override
