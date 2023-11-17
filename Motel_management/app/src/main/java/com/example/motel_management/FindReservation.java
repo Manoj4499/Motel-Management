@@ -89,6 +89,33 @@ public class FindReservation extends AppCompatActivity {
                 .limit(1)
                 .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        progressDialog.hide();
+                        if (task.isSuccessful()) {
+
+                            if (!task.getResult().isEmpty()) {
+                                DocumentSnapshot res = task.getResult().getDocuments().get(0);
+                                Intent intent = new Intent(FindReservation.this, ReservationDetailsActivity.class);
+                                Bundle bundle = new Bundle();
+                                Room room = new Room(
+                                        res.getString("id"),
+                                        res.getString("motelId"),
+                                        res.getString("type"),
+                                        res.getString("description"),
+                                        res.getBoolean("occupied"),
+                                        res.getString("imageUrl"),
+                                        res.getLong("price"),
+                                        res.getBoolean("checkInn")
+                                );
+                                bundle.putParcelable("room", room);
+                                intent.putExtras(bundle);
+                                startActivity(intent);
+                                finish();
+
+
+
+                    }
+                });
 
     }
 
