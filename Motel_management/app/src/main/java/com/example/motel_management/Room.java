@@ -116,6 +116,19 @@ public class Room implements Parcelable {
     }
 
 
+    public Boolean getCheckIn() {
+        return checkIn;
+    }
+
+    public void setCheckIn(Boolean checkIn) {
+        this.checkIn = checkIn;
+    }
 
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+  
 }
