@@ -59,7 +59,13 @@ public class FindReservation extends AppCompatActivity {
             }
         });
 
-
+        btFindReservation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                findReservation();
+            }
+        });
+    }
 
     private void findReservation() {
         if (TextUtils.isEmpty(String.valueOf(etFirstName.getText()))) {
