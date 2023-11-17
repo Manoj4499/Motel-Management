@@ -54,6 +54,10 @@ public class MotelsListAdapter extends RecyclerView.Adapter<MotelsListAdapter.Mo
 
     }
 
+    @Override
+    public int getItemCount() {
+        return dataList.size();
+    }
 
 
 
