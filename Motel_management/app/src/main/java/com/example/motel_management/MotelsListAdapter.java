@@ -41,7 +41,18 @@ public class MotelsListAdapter extends RecyclerView.Adapter<MotelsListAdapter.Mo
         holder.tvLocation.setText(currentItem.getLocation());
         Glide.with(context).load(currentItem.getImageUrl()).into(holder.iv);
 
-       
+        holder.cv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, MotelDetailsActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putParcelable("motel", currentItem);
+                intent.putExtras(bundle);
+                context.startActivity(intent);
+            }
+        });
+
+    }
 
 
 
