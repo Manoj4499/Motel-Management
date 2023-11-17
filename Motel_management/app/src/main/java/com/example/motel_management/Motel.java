@@ -68,7 +68,29 @@ public class Motel implements Parcelable {
         return location;
     }
 
+    public void setLocation(String location) {
+        this.location = location;
+    }
 
+    public String getImageUrl() {
+        return imageUrl;
+    }
 
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(@NonNull Parcel dest, int i) {
+        dest.writeString(id);
+        dest.writeString(name);
+        dest.writeString(description);
+        dest.writeString(location);
+        dest.writeString(imageUrl);
+    }
 }
