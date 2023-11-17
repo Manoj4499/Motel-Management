@@ -39,7 +39,13 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         confirmBtn = findViewById(R.id.btn_confirm);
         confirmBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-          
+            public void onClick(View view) {
+                if (TextUtils.isEmpty(emailtx1.getText())) {
+                    Toast.makeText(ForgotPasswordActivity.this, "Enter email", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                progressDialog.show();
 
 
     }
