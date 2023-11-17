@@ -54,6 +54,19 @@ public class MotelsListActivity extends AppCompatActivity {
 
     }
 
+    void getData() {
+        progressDialog.show();
+        FirebaseFirestore.getInstance().collection("Motels").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                progressDialog.hide();
 
+                    adapter = new MotelsListAdapter(MotelsListActivity.this, motels);
+                    recyclerView.setAdapter(adapter);
+                } else {
+                    Toast.makeText(MotelsListActivity.this, getString(R.string.went_wrong), Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 }
