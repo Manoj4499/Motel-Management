@@ -52,7 +52,15 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<Void> task) {
                         progressDialog.hide();
 
+                        if (task.isSuccessful()) {
+                            Toast.makeText(ForgotPasswordActivity.this, "Password reset email sent", Toast.LENGTH_SHORT).show();
+                            finish();
+                        } else {
 
+                            Toast.makeText(ForgotPasswordActivity.this, "" + Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
 
             }
 
