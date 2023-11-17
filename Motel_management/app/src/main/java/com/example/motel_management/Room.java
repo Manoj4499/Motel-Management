@@ -59,10 +59,45 @@ public class Room implements Parcelable {
         }
     };
 
+    public String getId() {
+        return id;
+    }
 
+    public void setId(String id) {
+        this.id = id;
+    }
 
+    public String getMotelId() {
+        return motelId;
+    }
 
+    public void setMotelId(String id) {
+        this.motelId = id;
+    }
 
+    public String gettype() {
+        return type;
+    }
+
+    public void settype(String type) {
+        this.type = type;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Boolean getOccupied() {
+        return occupied;
+    }
+
+    public void setLocation(Boolean occupied) {
+        this.occupied = occupied;
+    }
 
 
 
