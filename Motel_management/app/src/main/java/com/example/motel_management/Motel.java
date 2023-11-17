@@ -20,6 +20,13 @@ public class Motel implements Parcelable {
         this.imageUrl = imageUrl;
     }
 
+    protected Motel(Parcel in) {
+        id = in.readString();
+        name = in.readString();
+        description = in.readString();
+        location = in.readString();
+        imageUrl = in.readString();
+    }
 
 
 
