@@ -56,6 +56,14 @@ public class MotelDetailsActivity extends AppCompatActivity {
         setData();
         getData();
 
+        btnDashboard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MotelDetailsActivity.this, MainActivity.class);
+                startActivity(intent);
+                finishAffinity();
+            }
+        });
 
     }
 
