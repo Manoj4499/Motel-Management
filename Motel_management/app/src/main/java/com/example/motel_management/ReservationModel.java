@@ -31,5 +31,38 @@ public class ReservationModel implements Parcelable {
 
     // Add getters and setters for startDate and endDate
 
-   
+    protected ReservationModel(Parcel in) {
+        room = in.readParcelable(Room.class.getClassLoader());
+        firstName = in.readString();
+        lastName = in.readString();
+        address = in.readString();
+        phoneNumber = in.readString();
+        idProof = in.readString();
+        long startMillis = in.readLong();
+        long endMillis = in.readLong();
+        startDate = startMillis == -1 ? null : new Date(startMillis);
+        endDate = endMillis == -1 ? null : new Date(endMillis);
+    }
+
+    public static final Creator<ReservationModel> CREATOR = new Creator<ReservationModel>() {
+        @Override
+        public ReservationModel createFromParcel(Parcel in) {
+            return new ReservationModel(in);
+        }
+
+        @Override
+        public ReservationModel[] newArray(int size) {
+            return new ReservationModel[size];
+        }
+    };
+
+    // Add getters and setters for startDate and endDate
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+  
 }
