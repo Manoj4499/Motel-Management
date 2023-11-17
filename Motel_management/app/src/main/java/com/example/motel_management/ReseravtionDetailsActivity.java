@@ -75,6 +75,19 @@ public class ReservationDetailsActivity extends AppCompatActivity {
 
     }
 
+    private void setUI() {
+        if (room != null) {
+            tvDesc.setText(room.getDescription());
+            tvRoomType.setText(room.gettype());
+            Glide.with(this).load(room.getImageUrl()).into(iv);
+            if (room.getCheckIn()) {
+                checkOutBtn.setVisibility(View.VISIBLE);
+            } else {
+                checkInBtn.setVisibility(View.VISIBLE);
+            }
+        }
+    }
+
 
 
 }
