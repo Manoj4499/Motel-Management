@@ -61,7 +61,19 @@ public class FindReservation extends AppCompatActivity {
 
 
 
-  
+    private void findReservation() {
+        if (TextUtils.isEmpty(String.valueOf(etFirstName.getText()))) {
+            Toast.makeText(FindReservation.this, "Enter first name", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (TextUtils.isEmpty(String.valueOf(etLastName.getText()))) {
+            Toast.makeText(FindReservation.this, "Enter last name", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (TextUtils.isEmpty(String.valueOf(etConfirmation.getText()))) {
+            Toast.makeText(FindReservation.this, "Enter confirmation number", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         progressDialog.show();
         FirebaseFirestore.getInstance().collectionGroup("rooms")
