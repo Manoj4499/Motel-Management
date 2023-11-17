@@ -3,6 +3,7 @@ package com.example.motel_management;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -21,10 +22,10 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class Login extends AppCompatActivity {
 
-    TextInputEditText emailtx1,passwordtx1;
-    Button loginbtn;
+    TextInputEditText emailtx1, passwordtx1;
+    Button loginbtn, forgotPassword;
     FirebaseAuth mAuth;
-    ProgressBar progressbar;
+    ProgressDialog progressDialog;
     TextView regnow;
 
     @Override
@@ -32,8 +33,8 @@ public class Login extends AppCompatActivity {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser != null){
-            Intent intent= new Intent(getApplicationContext(),MainActivity.class);
+        if (currentUser != null) {
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intent);
             finish();
         }
@@ -44,56 +45,55 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        mAuth=FirebaseAuth.getInstance();
-        emailtx1=findViewById(R.id.email);
-        passwordtx1=findViewById(R.id.password);
-        loginbtn=findViewById(R.id.btn_login);
+        progressDialog = new ProgressDialog(this);
+        mAuth = FirebaseAuth.getInstance();
+        emailtx1 = findViewById(R.id.email);
+        passwordtx1 = findViewById(R.id.password);
+        loginbtn = findViewById(R.id.btn_login);
+        forgotPassword = findViewById(R.id.btn_forgot_password);
         //progressbar = findViewById(R.id.progressbar);
-        regnow=findViewById(R.id.registernow);
+        regnow = findViewById(R.id.registernow);
         regnow.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent intent= new Intent(getApplicationContext(),Registration.class);
-                startActivity(intent);
-                finish();
-            }
+           
 
 
         });
+
 
         loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //progressbar.setVisibility(View.VISIBLE);
-                String email,password;
-                email=String.valueOf(emailtx1.getText());
-                password=String.valueOf(passwordtx1.getText());
+                String email, password;
+                email = String.valueOf(emailtx1.getText());
+                password = String.valueOf(passwordtx1.getText());
 
-                if(TextUtils.isEmpty(email)){
-
-                    Toast.makeText(Login.this,"Enter email",Toast.LENGTH_SHORT).show();
+                if (TextUtils.isEmpty(email)) {
+                    Toast.makeText(Login.this, "Enter email", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if(TextUtils.isEmpty(password)){
-
-                    Toast.makeText(Login.this,"Enter password",Toast.LENGTH_SHORT).show();
+                if (TextUtils.isEmpty(password)) {
+                    Toast.makeText(Login.this, "Enter password", Toast.LENGTH_SHORT).show();
                     return;
                 }
+
+                progressDialog.show();
 
                 mAuth.signInWithEmailAndPassword(email, password)
-                        .addOnCompleteListener( new OnCompleteListener<AuthResult>() {
+                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+
+
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 //progressbar.setVisibility(view.VISIBLE);
+                                progressDialog.hide();
                                 if (task.isSuccessful()) {
-                                    Toast.makeText(Login.this, "Authentication Success.",
-                                            Toast.LENGTH_SHORT).show();
-                                    Intent intent= new Intent(getApplicationContext(),MainActivity.class);
+
+                                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                                     startActivity(intent);
-                                    finish();
+                                    finishAffinity();
                                 } else {
-
-
                                     Toast.makeText(Login.this, "Authentication failed.",
                                             Toast.LENGTH_SHORT).show();
 
