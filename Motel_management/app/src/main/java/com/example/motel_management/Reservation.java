@@ -70,7 +70,10 @@ public class Reservation extends AppCompatActivity {
                     return;
                 }
 
-
+                if (startingDate == null || endingDate == null) {
+                    Toast.makeText(Reservation.this, "Select your dates", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
                 ReservationModel rm =
                         new ReservationModel(room,
