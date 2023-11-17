@@ -54,12 +54,15 @@ public class Login extends AppCompatActivity {
         //progressbar = findViewById(R.id.progressbar);
         regnow = findViewById(R.id.registernow);
         regnow.setOnClickListener(new View.OnClickListener() {
-            @Override
            
 
-
+        forgotPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ForgotPasswordActivity.class);
+                startActivity(intent);
+            }
         });
-
 
         loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,10 +72,7 @@ public class Login extends AppCompatActivity {
                 email = String.valueOf(emailtx1.getText());
                 password = String.valueOf(passwordtx1.getText());
 
-                if (TextUtils.isEmpty(email)) {
-                    Toast.makeText(Login.this, "Enter email", Toast.LENGTH_SHORT).show();
-                    return;
-                }
+
                 if (TextUtils.isEmpty(password)) {
                     Toast.makeText(Login.this, "Enter password", Toast.LENGTH_SHORT).show();
                     return;
@@ -90,6 +90,8 @@ public class Login extends AppCompatActivity {
                                 progressDialog.hide();
                                 if (task.isSuccessful()) {
 
+                                    Toast.makeText(Login.this, "Authentication Success.",
+                                            Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                                     startActivity(intent);
                                     finishAffinity();
