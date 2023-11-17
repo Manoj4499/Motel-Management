@@ -60,7 +60,17 @@ public class MotelsListActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 progressDialog.hide();
-
+                if (task.isSuccessful()) {
+                    List<Motel> motels = new ArrayList<>();
+                    for (QueryDocumentSnapshot doc : task.getResult()) {
+                        Motel motel = new Motel(
+                                doc.getString("id"),
+                                doc.getString("name"),
+                                doc.getString("description"),
+                                doc.getString("location"),
+                                doc.getString("imageUrl"));
+                        motels.add(motel);
+                    }
                     adapter = new MotelsListAdapter(MotelsListActivity.this, motels);
                     recyclerView.setAdapter(adapter);
                 } else {
