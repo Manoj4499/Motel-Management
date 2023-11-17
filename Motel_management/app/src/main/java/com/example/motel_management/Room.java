@@ -47,6 +47,17 @@ public class Room implements Parcelable {
         checkIn = tmpCheckIn == 0 ? null : tmpCheckIn == 1;
     }
 
+    public static final Creator<Room> CREATOR = new Creator<Room>() {
+        @Override
+        public Room createFromParcel(Parcel in) {
+            return new Room(in);
+        }
+
+        @Override
+        public Room[] newArray(int size) {
+            return new Room[size];
+        }
+    };
 
 
 
