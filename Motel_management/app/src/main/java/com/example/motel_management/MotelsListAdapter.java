@@ -60,6 +60,18 @@ public class MotelsListAdapter extends RecyclerView.Adapter<MotelsListAdapter.Mo
     }
 
 
+    static class MotelsViewHolder extends RecyclerView.ViewHolder {
+        public TextView tvName, tvLocation, tvDesc;
+        public ImageView iv;
+        public CardView cv;
 
+        public MotelsViewHolder(View itemView) {
+            super(itemView);
+            tvName = itemView.findViewById(R.id.tvName);
+            tvLocation = itemView.findViewById(R.id.tvLocation);
+            tvDesc = itemView.findViewById(R.id.tvDesc);
+            iv = itemView.findViewById(R.id.iv);
+            cv = itemView.findViewById(R.id.cv);
+        }
     }
 }
