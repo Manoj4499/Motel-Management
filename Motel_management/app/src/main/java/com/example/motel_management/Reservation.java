@@ -59,7 +59,10 @@ public class Reservation extends AppCompatActivity {
                     return;
                 }
 
-
+                if (TextUtils.isEmpty(String.valueOf(lastNameET.getText()))) {
+                    Toast.makeText(Reservation.this, "Enter last name", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
 
 
