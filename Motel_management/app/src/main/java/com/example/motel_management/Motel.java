@@ -1,14 +1,45 @@
 package com.example.motel_management;
 
-import androidx.appcompat.app.AppCompatActivity;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-import android.os.Bundle;
+import androidx.annotation.NonNull;
 
-public class Motel extends AppCompatActivity {
+public class Motel implements Parcelable {
+    private String id;
+    private String name;
+    private String description;
+    private String location;
+    private String imageUrl;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_motel);
+    public Motel(String id, String name, String description, String location, String imageUrl) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.location = location;
+        this.imageUrl = imageUrl;
     }
+
+
+
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+
+
+
 }
