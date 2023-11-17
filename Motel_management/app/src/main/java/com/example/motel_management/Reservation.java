@@ -97,7 +97,23 @@ public class Reservation extends AppCompatActivity {
             }
         });
 
-        
+        date.setOnClickListener(view -> {
+
+            CalendarConstraints.Builder constraintsBuilder = new CalendarConstraints.Builder();
+            constraintsBuilder.setValidator(DateValidatorPointForward.now());
+
+            MaterialDatePicker<Pair<Long, Long>> dateRangePicker = MaterialDatePicker.Builder.dateRangePicker()
+                    .setTitleText("Select Date Range")
+                    .setCalendarConstraints(constraintsBuilder.build())
+                    .build();
+
+            dateRangePicker.addOnPositiveButtonClickListener(selection -> {
+                updateDateRange(selection.first, selection.second);
+            });
+
+            dateRangePicker.show(getSupportFragmentManager(), dateRangePicker.toString());
+        });
+    }
 
     private void updateDateRange(long startDate, long endDate) {
         SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy", Locale.getDefault());
