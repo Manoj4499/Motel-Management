@@ -55,7 +55,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-     
+        find.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, FindReservation.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
