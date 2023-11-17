@@ -64,6 +64,14 @@ public class ReservationDetailsActivity extends AppCompatActivity {
             }
         });
 
+        dashboardBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ReservationDetailsActivity.this, MainActivity.class);
+                startActivity(intent);
+                finishAffinity();
+            }
+        });
 
     }
 
