@@ -47,6 +47,16 @@ public class ForgotPasswordActivity extends AppCompatActivity {
 
                 progressDialog.show();
 
+                FirebaseAuth.getInstance().sendPasswordResetEmail(emailtx1.getText().toString()).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        progressDialog.hide();
+
+
+
+            }
+
+        });
 
     }
 }
