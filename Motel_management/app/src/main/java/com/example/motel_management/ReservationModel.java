@@ -64,5 +64,79 @@ public class ReservationModel implements Parcelable {
     }
 
     @Override
-  
+    public void writeToParcel(@NonNull Parcel parcel, int i) {
+        parcel.writeParcelable(room, i);
+        parcel.writeString(firstName);
+        parcel.writeString(lastName);
+        parcel.writeString(address);
+        parcel.writeString(phoneNumber);
+        parcel.writeString(idProof);
+        parcel.writeLong(startDate != null ? startDate.getTime() : -1);
+        parcel.writeLong(endDate != null ? endDate.getTime() : -1);
+    }
+
+    // Add getters and setters for startDate and endDate
+    public Date getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
+    }
+
+    public Date getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
+    }
+
+    public Room getRoom() {
+        return room;
+    }
+
+    public void setRoom(Room room) {
+        this.room = room;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getIdProof() {
+        return idProof;
+    }
+
+    public void setIdProof(String idProof) {
+        this.idProof = idProof;
+    }
 }
