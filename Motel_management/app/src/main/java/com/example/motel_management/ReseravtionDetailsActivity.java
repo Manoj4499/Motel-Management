@@ -111,4 +111,32 @@ public class ReservationDetailsActivity extends AppCompatActivity {
                 });
     }
 
+    private void checkOut() {
+        progressDialog.show();
+        Map<String, Object> updates = new HashMap<>();
+
+        updates.put("checkInn", false);
+        updates.put("occupied", false);
+        updates.put("reservationConfirmationNumber", FieldValue.delete());
+        updates.put("reservationFirstName", FieldValue.delete());
+        updates.put("reservationLastName", FieldValue.delete());
+        updates.put("reservation", FieldValue.delete());
+
+
+        FirebaseFirestore.getInstance().collection("Motels")
+                .document(room.getMotelId()).collection("rooms").document(room.getId())
+                .update(updates).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(ReservationDetailsActivity.this, "Check Out Success", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(ReservationDetailsActivity.this, MainActivity.class);
+                            startActivity(intent);
+                            finishAffinity();
+                        } else {
+                            Toast.makeText(ReservationDetailsActivity.this, "Unable to check out", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+    }
 }
