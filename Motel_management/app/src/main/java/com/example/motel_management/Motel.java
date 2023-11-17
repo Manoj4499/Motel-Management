@@ -28,7 +28,17 @@ public class Motel implements Parcelable {
         imageUrl = in.readString();
     }
 
+    public static final Creator<Motel> CREATOR = new Creator<Motel>() {
+        @Override
+        public Motel createFromParcel(Parcel in) {
+            return new Motel(in);
+        }
 
+        @Override
+        public Motel[] newArray(int size) {
+            return new Motel[size];
+        }
+    };
 
     public String getId() {
         return id;
