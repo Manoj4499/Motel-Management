@@ -82,7 +82,23 @@ public class MotelDetailsActivity extends AppCompatActivity {
         FirebaseFirestore.getInstance().collection("Motels").document(motel.getId())
                 .collection("rooms").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
-
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        progressDialog.hide();
+                        if (task.isSuccessful()) {
+                            List<Room> rooms = new ArrayList<>();
+                            for (QueryDocumentSnapshot doc : task.getResult()) {
+                                Room room = new Room(
+                                        doc.getString("id"),
+                                        doc.getString("motelId"),
+                                        doc.getString("type"),
+                                        doc.getString("description"),
+                                        doc.getBoolean("occupied"),
+                                        doc.getString("imageUrl"),
+                                        doc.getLong("price"),
+                                        doc.getBoolean("checkIn")
+                                );
+                                rooms.add(room);
+                            }
                             adapter = new RoomsListAdapter(MotelDetailsActivity.this, rooms);
                             recyclerView.setAdapter(adapter);
                         } else {
