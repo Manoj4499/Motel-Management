@@ -61,5 +61,18 @@ public class MotelDetailsActivity extends AppCompatActivity {
 
 
 
-   
+    void getData() {
+        progressDialog.show();
+        FirebaseFirestore.getInstance().collection("Motels").document(motel.getId())
+                .collection("rooms").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+
+                            adapter = new RoomsListAdapter(MotelDetailsActivity.this, rooms);
+                            recyclerView.setAdapter(adapter);
+                        } else {
+                            Toast.makeText(MotelDetailsActivity.this, getString(R.string.went_wrong), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+    }
 }
