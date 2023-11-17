@@ -33,7 +33,7 @@ public class ReservationDetailsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_reservation_details);
+        setContentView(R.layout.activity_reseravtion_details);
 
         progressDialog = new ProgressDialog(this);
         tvDesc = findViewById(R.id.tvDesc);
