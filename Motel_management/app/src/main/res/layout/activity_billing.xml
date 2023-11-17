@@ -191,7 +191,18 @@
             app:layout_constraintTop_toTopOf="@+id/tvZipCode"
             app:layout_constraintVertical_bias="0.688" />
 
-        
+        <Button
+            android:id="@+id/btConfirm"
+            android:layout_width="150dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="40dp"
+            android:text="Confirm"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.487"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etZipCode" />
+
 
         <Button
             android:id="@+id/logout"
