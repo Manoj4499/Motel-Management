@@ -117,6 +117,9 @@ public class FindReservation extends AppCompatActivity {
                             }
 
 
+                        } else {
+                            Toast.makeText(FindReservation.this, getString(R.string.went_wrong), Toast.LENGTH_SHORT).show();
+                        }
                     }
                 });
 
