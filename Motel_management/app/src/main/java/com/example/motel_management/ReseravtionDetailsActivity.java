@@ -50,6 +50,12 @@ public class ReservationDetailsActivity extends AppCompatActivity {
 
         setUI();
 
+        checkInBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                checkIn();
+            }
+        });
 
 
     }
