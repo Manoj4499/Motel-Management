@@ -1,0 +1,14 @@
+<!-- res/drawable/overlay_drawable.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Layer 1: Existing Drawable Image -->
+    <item android:drawable="@drawable/bg" />
+
+    <!-- Layer 2: White Transparent Overlay -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#99FFFFFF" /> <!-- Adjust the alpha value (80) for transparency -->
+        </shape>
+    </item>
+
+</layer-list>
