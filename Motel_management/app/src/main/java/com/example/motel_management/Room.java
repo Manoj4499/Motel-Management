@@ -30,6 +30,22 @@ public class Room implements Parcelable {
     }
 
 
+    protected Room(Parcel in) {
+        id = in.readString();
+        motelId = in.readString();
+        type = in.readString();
+        description = in.readString();
+        byte tmpOccupied = in.readByte();
+        occupied = tmpOccupied == 0 ? null : tmpOccupied == 1;
+        imageUrl = in.readString();
+        if (in.readByte() == 0) {
+            price = null;
+        } else {
+            price = in.readLong();
+        }
+        byte tmpCheckIn = in.readByte();
+        checkIn = tmpCheckIn == 0 ? null : tmpCheckIn == 1;
+    }
 
 
 
