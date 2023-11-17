@@ -69,7 +69,10 @@ public class Reservation extends AppCompatActivity {
                     return;
                 }
 
-
+                if (TextUtils.isEmpty(String.valueOf(phNumberET.getText()))) {
+                    Toast.makeText(Reservation.this, "Enter phone number", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
                 if (TextUtils.isEmpty(String.valueOf(idProofET.getText()))) {
                     Toast.makeText(Reservation.this, "Enter ID Proof number", Toast.LENGTH_SHORT).show();
