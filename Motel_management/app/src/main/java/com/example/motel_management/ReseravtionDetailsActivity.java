@@ -88,6 +88,27 @@ public class ReservationDetailsActivity extends AppCompatActivity {
         }
     }
 
+    private void checkIn() {
+        progressDialog.show();
+        Map<String, Object> updates = new HashMap<>();
 
+        updates.put("checkInn", true);
+
+        FirebaseFirestore.getInstance().collection("Motels")
+                .document(room.getMotelId()).collection("rooms").document(room.getId())
+                .update(updates).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        progressDialog.hide();
+                        if (task.isSuccessful()) {
+                            Toast.makeText(ReservationDetailsActivity.this, "Check In Success", Toast.LENGTH_SHORT).show();
+                            checkOutBtn.setVisibility(View.VISIBLE);
+                            checkInBtn.setVisibility(View.GONE);
+                        } else {
+                            Toast.makeText(ReservationDetailsActivity.this, "Unable to check in", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+    }
 
 }
