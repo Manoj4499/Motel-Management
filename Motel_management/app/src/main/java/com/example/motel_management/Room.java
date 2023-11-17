@@ -99,6 +99,21 @@ public class Room implements Parcelable {
         this.occupied = occupied;
     }
 
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public void setPrice(Long price) {
+        this.price = price;
+    }
+
+    public Long getPrice() {
+        return price;
+    }
 
 
 
