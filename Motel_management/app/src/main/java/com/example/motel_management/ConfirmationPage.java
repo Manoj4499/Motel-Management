@@ -4,35 +4,40 @@ import android.os.Bundle;
 import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 
 public class ConfirmationPage extends AppCompatActivity {
-    Button button;
+    Button logout, dashboard;
+    TextView tv;
+
+    String details;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirmation_page);
-        button=findViewById(R.id.logout);
-        Button loginButton = findViewById(R.id.homeBTN);
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ConfirmationPage.this, SecondActivity.class);
+        logout = findViewById(R.id.logout);
+        dashboard = findViewById(R.id.homeBTN);
+        tv = findViewById(R.id.tvConfirm);
 
-                startActivity(intent);
-            }
-        });
-        button.setOnClickListener(new View.OnClickListener() {
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            details = bundle.getString("details");
+        }
+
+        logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 FirebaseAuth.getInstance().signOut();
-                Intent intent= new Intent(ConfirmationPage.this,Login.class);
+                Intent intent = new Intent(ConfirmationPage.this, Login.class);
                 startActivity(intent);
-                finish();
-
+                finishAffinity();
             }
         });
-    }}
+
+      
+}
