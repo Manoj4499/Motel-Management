@@ -79,7 +79,22 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/phNumberET" />
 
-       
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp"
+            android:background="#FBFBFB"
+            android:gravity="center|start"
+            android:inputType="text"
+            android:letterSpacing="0.05"
+            android:paddingHorizontal="15dp"
+            android:text="Select Dates"
+            android:textSize="17dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/idProofET" />
 
         <!-- Reserve Button -->
 
