@@ -62,7 +62,30 @@
             android:orientation="vertical"
             app:layout_constraintTop_toBottomOf="@+id/AmountTv">
 
+            <LinearLayout
+                android:id="@+id/llCardNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center|start"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/AmountTv">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Card Number"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/etCardNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:ems="10"
+                    android:inputType="number" />
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -114,6 +137,17 @@
             app:layout_constraintStart_toEndOf="@+id/tvPM"
             app:layout_constraintTop_toTopOf="@+id/tvPM"
             app:layout_constraintVertical_bias="0.275" />
+
+
+
+
+
+
+
+
+
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
