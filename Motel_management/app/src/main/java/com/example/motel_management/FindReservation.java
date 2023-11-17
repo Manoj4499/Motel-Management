@@ -112,6 +112,9 @@ public class FindReservation extends AppCompatActivity {
                                 startActivity(intent);
                                 finish();
 
+                            } else {
+                                Toast.makeText(FindReservation.this, "No Results Found!", Toast.LENGTH_SHORT).show();
+                            }
 
 
                     }
