@@ -80,7 +80,10 @@ public class Login extends AppCompatActivity {
                 email = String.valueOf(emailtx1.getText());
                 password = String.valueOf(passwordtx1.getText());
 
-
+                if (TextUtils.isEmpty(email)) {
+                    Toast.makeText(Login.this, "Enter email", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 if (TextUtils.isEmpty(password)) {
                     Toast.makeText(Login.this, "Enter password", Toast.LENGTH_SHORT).show();
                     return;
