@@ -64,7 +64,10 @@ public class Reservation extends AppCompatActivity {
                     return;
                 }
 
-
+                if (TextUtils.isEmpty(String.valueOf(addressET.getText()))) {
+                    Toast.makeText(Reservation.this, "Enter address", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
 
 
