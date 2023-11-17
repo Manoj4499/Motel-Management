@@ -67,7 +67,15 @@ public class MotelDetailsActivity extends AppCompatActivity {
 
     }
 
+    void setData() {
+        if (motel != null) {
+            tvMotelName.setText(motel.getName());
+            tvLocation.setText(motel.getLocation());
+            tvDesc.setText(motel.getDescription());
+            Glide.with(this).load(motel.getImageUrl()).into(iv);
 
+        }
+    }
 
     void getData() {
         progressDialog.show();
