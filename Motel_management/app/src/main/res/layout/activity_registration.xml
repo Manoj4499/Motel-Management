@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#C6D6C7"
+    android:background="@drawable/bg_layer"
     android:gravity="center"
     android:orientation="vertical"
     android:padding="15dp"
@@ -49,6 +49,7 @@
         android:visibility="gone" />
 
     <Button
+        android:layout_marginTop="20dp"
         android:id="@+id/btn_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
